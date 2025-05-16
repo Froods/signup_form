@@ -1,6 +1,6 @@
 :root {
    --input-bg-clr: #404040;
-   --input-txt-clr: #707070;
+   --input-txt-clr: #ebebeb;
 }
 
 * {
@@ -29,12 +29,17 @@ input:focus {
 }
 
 input::placeholder {
-    color: var(--input-txt-clr);
+    color: #707070;
+}
+
+input:user-invalid::placeholder {
+    color: #cf2b2b;
 }
 
 label {
     font-size: 10px;
     color: #202020;
+    margin-bottom: 1px;
 }
 
 label:has(+ input:user-invalid) {
@@ -58,7 +63,7 @@ body {
 }
 
 .banner {
-    background-image: url(pic.jpg);
+    background-image: url(images/pic.jpg);
     height: auto;
     width: auto;
     background-size: cover;
