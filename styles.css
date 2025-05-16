@@ -10,6 +10,10 @@
     font: 14px sans-serif;
 }
 
+button {
+    font-size: 16px;
+}
+
 input {
     background: none;
     color: var(--input-txt-clr);
@@ -141,13 +145,17 @@ body {
 }
 
 .submit {
+    margin-top: 1.5rem;
+    padding: 16px 12px;
     background-color: #45cb68;
     border: #45cb68 2px solid;
     color: #101010;
+    transition: 0.1s;
 }
 
 .submit:hover {
     background-color: #28bd50;
     border: #28bd50 2px solid;
-    color: #101010;
+    color: #ffffff;
+    cursor: pointer;
 }
