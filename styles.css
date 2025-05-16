@@ -1,7 +1,40 @@
+:root {
+   --input-bg-clr: #404040;
+   --input-txt-clr: #707070;
+}
+
 * {
     padding: 0;
     margin: 0;
+    border: 0;
     font: 14px sans-serif;
+}
+
+input {
+    background: none;
+    color: var(--input-txt-clr);
+    font-size: 16px;
+}
+
+input:user-invalid {
+    --input-txt-clr: #cf2b2b;
+}
+
+input:focus {
+    outline: none;
+}
+
+input::placeholder {
+    color: var(--input-txt-clr);
+}
+
+label {
+    font-size: 10px;
+    color: #202020;
+}
+
+label:has(+ input:user-invalid) {
+    color: #540000;
 }
 
 body {
@@ -28,7 +61,7 @@ body {
     flex-grow: 4;
     display: flex;
     flex-direction: column;
-    width: 500px;
+    width: 600px;
 }
 
 .form {
@@ -72,11 +105,49 @@ body {
 }
 
 .form-inputs {
-    margin-top: 4rem;
+    margin-top: 2rem;
     align-items: center;
     width: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-items: center;
     justify-content: center;
+    box-sizing: border-box;
+}
+
+.input {
+    margin: 1rem 22px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--input-bg-clr);
+    border: var(--input-bg-clr) 2px solid;
+    padding: 12px;
+    border-radius: 32px;
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-bottom: 14px;
+    transition: 0.1s;
+}
+
+.input:focus-within,
+.input:hover {
+    --input-bg-clr: #505050;
+}
+
+.input:has(input:user-invalid) {
+    --input-bg-clr: #9c0000;
+    border: #540000 2px solid;
+}
+
+.submit {
+    background-color: #45cb68;
+    border: #45cb68 2px solid;
+    color: #101010;
+}
+
+.submit:hover {
+    background-color: #28bd50;
+    border: #28bd50 2px solid;
+    color: #101010;
 }
